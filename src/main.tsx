@@ -10,12 +10,18 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <KindeProvider
       clientId="835b30ac00044e5a9ccd59789b6bc3ee"
       domain="https://jvgs.kinde.com"
-      redirectUri="http://localhost:5173"
-      logoutUri="http://localhost:5173"
+      redirectUri={process.env.NODE_ENV === "production"
+        ? "https://my-todo-app-pied.vercel.app/"
+        : "http://localhost:5173"
+      }
+      logoutUri={process.env.NODE_ENV === "production"
+        ? "https://my-todo-app-pied.vercel.app/"
+        : "http://localhost:5173"
+      }
     >
       <TodosContextProvider>
         <App />
       </TodosContextProvider>
     </KindeProvider>
-  </React.StrictMode>,
+  </React.StrictMode >,
 )
