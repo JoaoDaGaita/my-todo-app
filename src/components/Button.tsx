@@ -1,7 +1,7 @@
 type ButtonProps = {
   children: React.ReactNode
   buttonType?: "primary" | "secondary"
-  onClick: () => Promise<void>
+  onClick?: () => Promise<void>
 }
 
 export function Button({ children, buttonType, onClick }: ButtonProps) {
