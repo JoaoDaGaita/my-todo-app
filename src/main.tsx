@@ -18,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         ? "https://my-todo-app-pied.vercel.app/"
         : "http://localhost:5173"
       }
+      isDangerouslyUseLocalStorage={true}
     >
       <TodosContextProvider>
         <App />
