@@ -34,6 +34,10 @@ export function TodosContextProvider({ children }: TodosContextProviderProps) {
   const totalNumberOfTodos = todos.length
   const numberOfCompletedTodos = todos.filter((todo) => todo.isCompleted).length
   const handleAddTodo = (todoText: string) => {
+    if (!todoText || todoText.trim() === "") {
+      return
+    }
+
     if (todos.length >= 3 && !isAuthenticated) {
       alert("Log in to add more than 3 todos")
       return
